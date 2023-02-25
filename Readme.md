@@ -1,7 +1,7 @@
 ## Motivation[![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#motivation)
 
 - Notre panel technique fait face à un spectre large de besoins, qui sont d'un degré de complexité très variable
-- Il nous faut donc outils et méthodes appropriées pour y répondre
+- Il nous faut donc des outils et des méthodes appropriés
 
 > 💡 Il s'agit de tester comment on peut répondre à des besoins simples mais aussi quand on a plus
 plus de règles métier et qu'il devient plus difficile de concevoir et maintenir une application.
@@ -9,7 +9,7 @@ plus de règles métier et qu'il devient plus difficile de concevoir et mainteni
 
 ## Que propose ce repo ? [![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#roadmap)
 
-Api platform. Un bref rappel historique:
+ Api platform. Un bref rappel historique:
 - v1, approche "MakerBundle" et on parvenait [à grands coups d'add-ons] à dépasser FOS_rest_bundle,à appliquer les normes REST, (modèle de maturité de Ridchardson).
 - v2, la DX s'améliore et il est facile et rapide de créer une resource et son CRUD, une API conforme aux standards du Web.
 - v3, API-P propose des moyens de se plugger entre la Request et la Response pour faire du custom
@@ -25,14 +25,14 @@ Branche main:
 
 ### CRUD:
 
-1. Une TodoList\
+1. Une TodoList
    Une table "task" (id, name, created_at, updated_at), exposée via Api Platform en ApiResource
    et mappée via les annotations doctrine
 
-2. **Un Kanban**\
+2. Un Kanban
    On ajoute une relation "task" - "status"
 
-3. Ajoutons un timer\
+3. **Ajoutons un timer**\
    On ajoute une resource timer pour pouvoir mesurer le temps passé par Task
    Pour terminer le CRUD, des tests d'intégration
 
