@@ -9,7 +9,7 @@ plus de règles métier et qu'il devient plus difficile de concevoir et mainteni
 
 ## Que propose ce repo ? [![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#roadmap)
 
-Api platform. Un bref rappel historique:
+ Api platform. Un bref rappel historique:
 - v1, approche "MakerBundle" et on parvenait [à grands coups d'add-ons] à dépasser FOS_rest_bundle,à appliquer les normes REST, (modèle de maturité de Ridchardson).
 - v2, la DX s'améliore et il est facile et rapide de créer une resource et son CRUD, une API conforme aux standards du Web.
 - v3, API-P propose des moyens de se plugger entre la Request et la Response pour faire du custom
@@ -25,21 +25,21 @@ Branche main:
 
 ### CRUD:
 
-1. Une TodoList
-Une table "task" (id, name, created_at, updated_at), exposée via Api Platform en ApiResource
-et mappée via les annotations doctrine
+1. Une TodoList\
+   Une table "task" (id, name, created_at, updated_at), exposée via Api Platform en ApiResource
+   et mappée via les annotations doctrine
 
-2. **Un Kanban**\
+2. Un Kanban
    On ajoute une relation "task" - "status"
 
-3. **Ajoutons un timer**\
-On ajoute une resource timer pour pouvoir mesurer le temps passé par Task
-Pour terminer le CRUD, des tests d'intégration
+3. Ajoutons un timer
+   On ajoute une resource timer pour pouvoir mesurer le temps passé par Task
+   Pour terminer le CRUD, des tests d'intégration
 
 
 ### Hexa + cqrs:
 
-4. Decouplage
+4. **Decouplage**\
    Utilisation des DataProvider et DataPersister d'API-P pour se découpler du fmwk
 
 5. Ajoutons des stats\
