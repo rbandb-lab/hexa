@@ -7,6 +7,7 @@ namespace App\Entity;
 use ApiPlatform\Metadata\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
+/** A book. */
 #[ApiResource]
 #[ORM\Entity]
 class Task
@@ -31,11 +32,6 @@ class Task
         $this->name = $name;
         $this->createdAt = new \DateTimeImmutable();
         $this->status = 'todo';
-    }
-
-    public function getStatus(): string
-    {
-        return $this->status;
     }
 
     public function getId(): int
