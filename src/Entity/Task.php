@@ -31,10 +31,14 @@ class Task
     #[ORM\JoinColumn(name: 'timer_id', referencedColumnName: 'id', nullable: true)]
     private ?Timer $timer = null;
 
+    #[ORM\Column(type: 'string')]
+    private string $status;
+
     public function __construct(string $name)
     {
         $this->name = $name;
         $this->createdAt = new \DateTimeImmutable();
+        $this->status = 'todo';
     }
 
     public function getId(): int
