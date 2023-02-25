@@ -24,10 +24,14 @@ class Task
     #[ORM\Column(type: 'datetime')]
     private \DateTime $updatedAt;
 
+    #[ORM\Column(type: 'string')]
+    private string $status;
+
     public function __construct(string $name)
     {
         $this->name = $name;
         $this->createdAt = new \DateTimeImmutable();
+        $this->status = 'todo';
     }
 
     public function getId(): int
