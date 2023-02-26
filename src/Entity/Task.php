@@ -7,8 +7,9 @@ namespace App\Entity;
 use ApiPlatform\Metadata\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity]
+/** A book. */
 #[ApiResource]
+#[ORM\Entity]
 class Task
 {
     #[ORM\Id, ORM\Column, ORM\GeneratedValue]
@@ -40,6 +41,11 @@ class Task
     public function getId(): int
     {
         return $this->id;
+    }
+
+    public function setId(int $id): void
+    {
+        $this->id = $id;
     }
 
     public function getName(): string
