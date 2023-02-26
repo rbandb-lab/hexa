@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\ApiResource;
+namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
-use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /** A book. */
@@ -25,10 +24,14 @@ class Task
     #[ORM\Column(type: 'datetime')]
     private \DateTime $updatedAt;
 
+    #[ORM\Column(type: 'string')]
+    private string $status;
+
     public function __construct(string $name)
     {
         $this->name = $name;
         $this->createdAt = new \DateTimeImmutable();
+        $this->status = 'todo';
     }
 
     public function getId(): int
