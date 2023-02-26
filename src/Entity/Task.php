@@ -5,11 +5,12 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Metadata\Link;
 use Doctrine\ORM\Mapping as ORM;
 
-/** A book. */
-#[ApiResource]
+
 #[ORM\Entity]
+#[ApiResource]
 class Task
 {
     #[ORM\Id, ORM\Column, ORM\GeneratedValue]
@@ -24,14 +25,14 @@ class Task
     #[ORM\Column(type: 'datetime')]
     private \DateTime $updatedAt;
 
-    #[ORM\Column(type: 'string')]
-    private string $status;
+    #[ORM\ManyToOne(targetEntity: Status::class,inversedBy: 'tasks')]
+    #[ORM\JoinColumn(name: 'status_id', referencedColumnName: 'id', nullable: true)]
+    private ?Status $status = null;
 
     public function __construct(string $name)
     {
         $this->name = $name;
         $this->createdAt = new \DateTimeImmutable();
-        $this->status = 'todo';
     }
 
     public function getId(): int
@@ -72,5 +73,15 @@ class Task
     public function setUpdatedAt(\DateTime $updatedAt): void
     {
         $this->updatedAt = $updatedAt;
+    }
+
+    public function getStatus(): Status
+    {
+        return $this->status;
+    }
+
+    public function setStatus(Status $status): void
+    {
+        $this->status = $status;
     }
 }

@@ -24,11 +24,13 @@ Branche main:
 
 Branche crud:
 
-1. **Une TodoList**\
+1. Une TodoList
 Une table "task" (id, name, created_at, updated_at), exposée via Api Platform en ApiResource
 et mappée via les annotations doctrine
 
-2. Un Kanban
+2. **Un Kanban**\
+On ajoute une relation "task" - "status"
+
 3. Ajoutons un timer
 4. Ajoutons des stats
 
