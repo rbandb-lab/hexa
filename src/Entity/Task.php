@@ -29,6 +29,10 @@ class Task
     #[ORM\JoinColumn(name: 'status_id', referencedColumnName: 'id', nullable: true)]
     private ?Status $status = null;
 
+    #[ORM\OneToOne(targetEntity: Status::class)]
+    #[ORM\JoinColumn(name: 'timer_id', referencedColumnName: 'id', nullable: true)]
+    private ?Timer $timer = null;
+
     public function __construct(string $name)
     {
         $this->name = $name;
@@ -83,5 +87,15 @@ class Task
     public function setStatus(Status $status): void
     {
         $this->status = $status;
+    }
+
+    public function getTimer(): ?Timer
+    {
+        return $this->timer;
+    }
+
+    public function setTimer(?Timer $timer): void
+    {
+        $this->timer = $timer;
     }
 }
