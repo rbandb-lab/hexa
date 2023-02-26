@@ -29,10 +29,10 @@ Branche main:
    Une table "task" (id, name, created_at, updated_at), exposée via Api Platform en ApiResource
    et mappée via les annotations doctrine
 
-2. **Un Kanban**\
+2. Un Kanban
    On ajoute une relation "task" - "status"
 
-3. Ajoutons un timer
+3. **Ajoutons un timer**\
    On ajoute une resource timer pour pouvoir mesurer le temps passé par Task
    Pour terminer le CRUD, des tests d'intégration
 
