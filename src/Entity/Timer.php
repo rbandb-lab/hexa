@@ -17,6 +17,7 @@ class Timer
     #[ORM\Column(type: 'datetime')]
     private \DateTime $startedAt;
 
+<<<<<<< HEAD
     #[ORM\Column(type: 'datetime', nullable: true)]
     private ?\DateTime $endedAt = null;
 
@@ -32,6 +33,14 @@ class Timer
     public function getTask(): Task
     {
         return $this->task;
+=======
+    #[ORM\Column(type: 'datetime')]
+    private \DateTime $endedAt;
+
+    public function __construct()
+    {
+        $this->startedAt = new \DateTime();
+>>>>>>> 5ef35d9 (add Timer ApiResource)
     }
 
     public function getId(): ?int
@@ -39,18 +48,43 @@ class Timer
         return $this->id;
     }
 
+<<<<<<< HEAD
+=======
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+
+>>>>>>> 5ef35d9 (add Timer ApiResource)
     public function getStartedAt(): \DateTime
     {
         return $this->startedAt;
     }
 
+<<<<<<< HEAD
     public function getEndedAt(): ?\DateTime
+=======
+    public function setStartedAt(\DateTime $startedAt): void
+    {
+        $this->startedAt = $startedAt;
+    }
+
+    public function getEndedAt(): \DateTime
+>>>>>>> 5ef35d9 (add Timer ApiResource)
     {
         return $this->endedAt;
     }
 
+<<<<<<< HEAD
     public function setEndedAt(?\DateTime $endedAt): void
     {
         $this->endedAt = $endedAt;
     }
 }
+=======
+    public function setEndedAt(\DateTime $endedAt): void
+    {
+        $this->endedAt = $endedAt;
+    }
+}
+>>>>>>> 5ef35d9 (add Timer ApiResource)

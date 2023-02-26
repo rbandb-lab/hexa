@@ -27,6 +27,7 @@ class Task
     #[ORM\JoinColumn(name: 'status_id', referencedColumnName: 'id', nullable: true)]
     private ?Status $status = null;
 
+<<<<<<< HEAD
     #[ORM\OneToOne(inversedBy: 'task', targetEntity: Timer::class, cascade: ['persist'])]
     #[ORM\JoinColumn(name: 'timer_id', referencedColumnName: 'id', nullable: true)]
     private ?Timer $timer = null;
@@ -34,6 +35,12 @@ class Task
     #[ORM\Column(type: 'string')]
     private string $status;
 
+=======
+    #[ORM\OneToOne(targetEntity: Status::class)]
+    #[ORM\JoinColumn(name: 'timer_id', referencedColumnName: 'id', nullable: true)]
+    private ?Timer $timer = null;
+
+>>>>>>> 5ef35d9 (add Timer ApiResource)
     public function __construct(string $name)
     {
         $this->name = $name;
