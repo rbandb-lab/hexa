@@ -7,9 +7,9 @@ namespace App\Entity;
 use ApiPlatform\Metadata\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
-/** A book. */
-#[ApiResource]
+
 #[ORM\Entity]
+#[ApiResource]
 class Task
 {
     #[ORM\Id, ORM\Column, ORM\GeneratedValue]
