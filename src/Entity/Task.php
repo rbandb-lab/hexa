@@ -32,10 +32,14 @@ class Task
     #[ORM\JoinColumn(name: 'timer_id', referencedColumnName: 'id', nullable: true)]
     private ?Timer $timer = null;
 
+    #[ORM\Column(type: 'integer')]
+    private int $estimate;
+
     public function __construct(string $name)
     {
         $this->name = $name;
         $this->createdAt = new \DateTimeImmutable();
+        $this->estimate = 0;
     }
 
     public function getId(): int
@@ -96,5 +100,15 @@ class Task
     public function setTimer(?Timer $timer): void
     {
         $this->timer = $timer;
+    }
+
+    public function getEstimate(): int
+    {
+        return $this->estimate;
+    }
+
+    public function setEstimate(int $estimate): void
+    {
+        $this->estimate = $estimate;
     }
 }
