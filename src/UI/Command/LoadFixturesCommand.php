@@ -4,27 +4,30 @@ declare(strict_types=1);
 
 namespace App\UI\Command;
 
-use App\Entity\Task;
 use App\Entity\Timer;
 use App\Factory\StatusFactory;
 use App\Factory\TaskFactory;
 use App\Repository\StatusRepositoryInterface;
-use App\Repository\TaskRepositoryInterface;
 use Faker\Factory;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Symfony\Component\Validator\Constraints\Time;
 
-#[AsCommand(name: 'app:load:fixtures')]
+#[AsCommand(
+    name: 'app:load:fixtures',
+    description: 'Creates fixtures',
+    aliases: ['app:load:fixtures'],
+    hidden: false
+)]
 class LoadFixturesCommand extends Command
 {
     private StatusRepositoryInterface $statusRepository;
 
     public function __construct(
         StatusRepositoryInterface $statusRepository,
-        string $name = null)
+        string $name = null
+    )
     {
         $this->statusRepository = $statusRepository;
         parent::__construct($name);
@@ -65,18 +68,12 @@ class LoadFixturesCommand extends Command
             'updatedAt' => $faker->dateTimeBetween('-10 days', $createdAt->getTimestamp()),
         ]);
 
-        for($t = 0; $t <3 ; $t++){
-            $timer = new Timer($startedAt = $faker->dateTimeBetween('-10 days', $updatedAt));
-            $endedAt = new \DateTime();
-            $timer->setEndedAt($endedAt->setTimestamp($startedAt->getTimestamp() + random_int(100, 14400)));
-
+        for ($t = 0; $t <3 ; $t++) {
             $task = TaskFactory::createOne([
                 'status' => $this->statusRepository->find(3),
                 'createdAt' => $createdAt = \DateTimeImmutable::createFromMutable($faker->dateTimeBetween('-10 days', 'now')),
                 'updatedAt' => $faker->dateTimeBetween('-10 days', $createdAt->getTimestamp()),
-                'timer' => $timer
             ]);
-
         }
 
         return Command::SUCCESS;

@@ -3,7 +3,9 @@
 namespace App\Factory;
 
 use App\Entity\Task;
+use App\Entity\Timer;
 use App\Repository\StatusRepositoryInterface;
+use Faker\Factory;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
 
@@ -45,10 +47,14 @@ final class TaskFactory extends ModelFactory
      */
     protected function initialize(): self
     {
+        $faker = Factory::create('en');
         return $this
-             ->afterInstantiate(function(Task $task): void {
+             ->afterInstantiate(function (Task $task) use ($faker): void {
                  $status = $task->getStatus();
                  $status->addTask($task);
+                 $timer = new Timer($task, $startedAt = $faker->dateTimeBetween('-10 days', $task->getUpdatedAt() ?? new \DateTime('now')));
+                 $timer->setEndedAt($faker->dateTimeBetween('-10 days', $task->getUpdatedAt()));
+                 $task->setTimer($timer);
              })
         ;
     }

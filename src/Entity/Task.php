@@ -8,7 +8,6 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Link;
 use Doctrine\ORM\Mapping as ORM;
 
-
 #[ORM\Entity]
 #[ApiResource]
 class Task
@@ -22,14 +21,14 @@ class Task
     #[ORM\Column(type: 'datetime_immutable')]
     private \DateTimeImmutable $createdAt;
 
-    #[ORM\Column(type: 'datetime')]
-    private \DateTime $updatedAt;
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private ?\DateTime $updatedAt = null;
 
     #[ORM\ManyToOne(targetEntity: Status::class, inversedBy: 'tasks')]
     #[ORM\JoinColumn(name: 'status_id', referencedColumnName: 'id', nullable: true)]
     private ?Status $status = null;
 
-    #[ORM\OneToOne(targetEntity: Timer::class, cascade: ['persist'])]
+    #[ORM\OneToOne(inversedBy: 'task', targetEntity: Timer::class, cascade: ['persist'])]
     #[ORM\JoinColumn(name: 'timer_id', referencedColumnName: 'id', nullable: true)]
     private ?Timer $timer = null;
 
@@ -42,11 +41,6 @@ class Task
     public function getId(): int
     {
         return $this->id;
-    }
-
-    public function setId(int $id): void
-    {
-        $this->id = $id;
     }
 
     public function getName(): string
@@ -79,12 +73,12 @@ class Task
         $this->updatedAt = $updatedAt;
     }
 
-    public function getStatus(): Status
+    public function getStatus(): ?Status
     {
         return $this->status;
     }
 
-    public function setStatus(Status $status): void
+    public function setStatus(?Status $status): void
     {
         $this->status = $status;
     }
