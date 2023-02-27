@@ -25,11 +25,11 @@ class Task
     #[ORM\Column(type: 'datetime')]
     private \DateTime $updatedAt;
 
-    #[ORM\ManyToOne(targetEntity: Status::class,inversedBy: 'tasks')]
+    #[ORM\ManyToOne(targetEntity: Status::class, inversedBy: 'tasks')]
     #[ORM\JoinColumn(name: 'status_id', referencedColumnName: 'id', nullable: true)]
     private ?Status $status = null;
 
-    #[ORM\OneToOne(targetEntity: Status::class)]
+    #[ORM\OneToOne(targetEntity: Timer::class, cascade: ['persist'])]
     #[ORM\JoinColumn(name: 'timer_id', referencedColumnName: 'id', nullable: true)]
     private ?Timer $timer = null;
 
