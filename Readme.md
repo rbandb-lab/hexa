@@ -32,14 +32,14 @@ et mappée via les annotations doctrine
 2. Un Kanban
    On ajoute une relation "task" - "status"
 
-3. **Ajoutons un timer**\
+3. Ajoutons un timer
 On ajoute une resource timer pour pouvoir mesurer le temps passé par Task
 Pour terminer le CRUD, des tests d'intégration
 
 
 ### Hexa + cqrs:
 
-4. Decouplage
+4. **Decouplage**\
    Utilisation des DataProvider et DataPersister d'API-P pour se découpler du fmwk
 
 5. Ajoutons des stats\
