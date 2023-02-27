@@ -57,14 +57,14 @@ class Status
 
     public function addTask(Task $task): void
     {
-        if(!$this->tasks->contains($task)){
+        if (!$this->tasks->contains($task)) {
             $this->tasks->add($task);
         }
     }
 
     public function removeTask(Task $task): void
     {
-        if($this->tasks->contains($task)){
+        if ($this->tasks->contains($task)) {
             $this->tasks->removeElement($task);
         }
     }

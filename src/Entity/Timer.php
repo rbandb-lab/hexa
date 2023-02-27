@@ -19,12 +19,21 @@ class Timer
     #[ORM\Column(type: 'datetime')]
     private \DateTime $startedAt;
 
-    #[ORM\Column(type: 'datetime')]
-    private \DateTime $endedAt;
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private ?\DateTime $endedAt = null;
 
-    public function __construct()
+    #[ORM\OneToOne(mappedBy: 'timer', targetEntity: Task::class)]
+    private Task $task;
+
+    public function __construct(Task $task)
     {
         $this->startedAt = new \DateTime();
+        $this->task = $task;
+    }
+
+    public function getTask(): Task
+    {
+        return $this->task;
     }
 
     public function getId(): ?int
@@ -32,27 +41,17 @@ class Timer
         return $this->id;
     }
 
-    public function setId(?int $id): void
-    {
-        $this->id = $id;
-    }
-
     public function getStartedAt(): \DateTime
     {
         return $this->startedAt;
     }
 
-    public function setStartedAt(\DateTime $startedAt): void
-    {
-        $this->startedAt = $startedAt;
-    }
-
-    public function getEndedAt(): \DateTime
+    public function getEndedAt(): ?\DateTime
     {
         return $this->endedAt;
     }
 
-    public function setEndedAt(\DateTime $endedAt): void
+    public function setEndedAt(?\DateTime $endedAt): void
     {
         $this->endedAt = $endedAt;
     }
