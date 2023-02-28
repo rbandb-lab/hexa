@@ -98,18 +98,6 @@
             "bin/console"
         ]
     },
-    "symfony/debug-bundle": {
-        "version": "6.2",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "main",
-            "version": "5.3",
-            "ref": "5aa8aa48234c8eb6dbdd7b3cd5d791485d2cec4b"
-        },
-        "files": [
-            "config/packages/debug.yaml"
-        ]
-    },
     "symfony/flex": {
         "version": "2.2",
         "recipe": {
@@ -174,21 +162,6 @@
             "config/packages/monolog.yaml"
         ]
     },
-    "symfony/phpunit-bridge": {
-        "version": "6.2",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "main",
-            "version": "5.3",
-            "ref": "819d3d2ffa4590eba0b8f4f3e5e89415ee4e45c3"
-        },
-        "files": [
-            ".env.test",
-            "bin/phpunit",
-            "phpunit.xml.dist",
-            "tests/bootstrap.php"
-        ]
-    },
     "symfony/routing": {
         "version": "6.2",
         "recipe": {
@@ -251,17 +224,16 @@
             "config/packages/validator.yaml"
         ]
     },
-    "symfony/web-profiler-bundle": {
-        "version": "6.2",
+    "zenstruck/foundry": {
+        "version": "1.28",
         "recipe": {
             "repo": "github.com/symfony/recipes",
             "branch": "main",
-            "version": "6.1",
-            "ref": "e42b3f0177df239add25373083a564e5ead4e13a"
+            "version": "1.10",
+            "ref": "37c2f894cc098ab4c08874b80cccc8e2f8de7976"
         },
         "files": [
-            "config/packages/web_profiler.yaml",
-            "config/routes/web_profiler.yaml"
+            "config/packages/zenstruck_foundry.yaml"
         ]
     },
     "zenstruck/foundry": {
