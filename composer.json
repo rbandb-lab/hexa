@@ -37,23 +37,16 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.11",
         "justinrainbow/json-schema": "^5.2",
-        "phpunit/phpunit": "^9.5",
+        "phpunit/phpunit": "^10.0",
         "symfony/browser-kit": "6.2.*",
         "symfony/css-selector": "6.2.*",
         "symfony/debug-bundle": "6.2.*",
         "symfony/http-client": "6.2.*",
+        "symfony/maker-bundle": "^1.48",
         "symfony/phpunit-bridge": "6.2.*",
         "symfony/stopwatch": "6.2.*",
         "symfony/web-profiler-bundle": "6.2.*",
         "vimeo/psalm": "^5.6",
-        "symfony/maker-bundle": "^1.48",
-        "zenstruck/foundry": "^1.28"
-    },
-    "require-dev": {
-        "friendsofphp/php-cs-fixer": "^3.14",
-        "phpunit/phpunit": "^10.0",
-        "symfony/http-client": "6.2.*",
-        "symfony/maker-bundle": "^1.48",
         "zenstruck/foundry": "^1.28"
     },
     "config": {
