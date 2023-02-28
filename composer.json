@@ -46,6 +46,7 @@
         "symfony/phpunit-bridge": "6.2.*",
         "symfony/stopwatch": "6.2.*",
         "symfony/web-profiler-bundle": "6.2.*",
+        "vimeo/psalm": "^5.7",
         "zenstruck/foundry": "^1.28"
     },
     "config": {
