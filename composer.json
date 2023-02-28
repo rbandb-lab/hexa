@@ -46,6 +46,7 @@
         "symfony/stopwatch": "6.2.*",
         "symfony/web-profiler-bundle": "6.2.*",
         "vimeo/psalm": "^5.6",
+        "symfony/maker-bundle": "^1.48",
         "zenstruck/foundry": "^1.28"
     },
     "config": {

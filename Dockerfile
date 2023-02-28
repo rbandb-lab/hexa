@@ -44,6 +44,7 @@ COPY --from=composer/composer:2-bin /composer /usr/bin/composer
 
 # https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER=1
+ENV COMPOSER_HOME=/srv/.composer
 
 ENV PATH="${PATH}:/root/.composer/vendor/bin"
 
