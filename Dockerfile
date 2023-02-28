@@ -35,7 +35,8 @@ COPY docker/php/conf.d/symfony.prod.ini $PHP_INI_DIR/conf.d/symfony.ini
 COPY docker/php/php-fpm.d/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf
 
 COPY docker/php/docker-entrypoint.sh /usr/local/bin/docker-entrypoint
-RUN chmod +x /usr/local/bin/docker-entrypoint
+RUN chmod +x /usr/local/bin/docker-entrypoint; \
+    mkdir -p /srv/app/var/cache /srv/app/var/log
 
 VOLUME /var/run/php
 
@@ -61,7 +62,9 @@ RUN set -eux; \
 	composer symfony:dump-env prod; \
 	composer run-script --no-dev post-install-cmd; \
 	chmod +x bin/console; sync
+
 VOLUME /srv/app/var
+VOLUME /var/run/php
 
 ENTRYPOINT ["docker-entrypoint"]
 CMD ["php-fpm"]
