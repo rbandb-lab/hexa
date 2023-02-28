@@ -25,7 +25,7 @@ Branche main:
 
 ### CRUD:
 
-1. **Une TodoList**\
+1. Une TodoList
    Une table "task" (id, name, created_at, updated_at), exposée via Api Platform en ApiResource
    et mappée via les annotations doctrine
 
