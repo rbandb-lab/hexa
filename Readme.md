@@ -20,14 +20,14 @@ le plus simple pour aller vers un projet plus élaboré.
 ## Versionning: [![](https://raw.githubusercontent.com/aregtech/areg-sdk/master/docs/img/pin.svg)](#branches)
 
 **Branche main:**
-0. Main projet vide + Readme
+0. Projet initial vide + Readme
 
-Branches crud:
+Branche crud:
 
 1. Une TodoList
 2. Un Kanban
 3. Ajoutons un timer
 4. Ajoutons des stats
 
-Branches hexa:
+Branches hexa + [CQRS](https://www.martinfowler.com/bliki/CQRS.html) :
 5. Technique Pomodoro
