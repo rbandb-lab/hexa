@@ -20,12 +20,16 @@ class Task
     #[ORM\Column(type: 'datetime_immutable')]
     private \DateTimeImmutable $createdAt;
 
-    #[ORM\Column(type: 'datetime')]
-    private \DateTime $updatedAt;
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private ?\DateTime $updatedAt = null;
 
     #[ORM\ManyToOne(targetEntity: Status::class, inversedBy: 'tasks')]
     #[ORM\JoinColumn(name: 'status_id', referencedColumnName: 'id', nullable: true)]
     private ?Status $status = null;
+
+    #[ORM\OneToOne(inversedBy: 'task', targetEntity: Timer::class, cascade: ['persist'])]
+    #[ORM\JoinColumn(name: 'timer_id', referencedColumnName: 'id', nullable: true)]
+    private ?Timer $timer = null;
 
     public function __construct(string $name)
     {
@@ -36,11 +40,6 @@ class Task
     public function getId(): int
     {
         return $this->id;
-    }
-
-    public function setId(int $id): void
-    {
-        $this->id = $id;
     }
 
     public function getName(): string
@@ -73,13 +72,23 @@ class Task
         $this->updatedAt = $updatedAt;
     }
 
-    public function getStatus(): Status
+    public function getStatus(): ?Status
     {
         return $this->status;
     }
 
-    public function setStatus(Status $status): void
+    public function setStatus(?Status $status): void
     {
         $this->status = $status;
+    }
+
+    public function getTimer(): ?Timer
+    {
+        return $this->timer;
+    }
+
+    public function setTimer(?Timer $timer): void
+    {
+        $this->timer = $timer;
     }
 }
