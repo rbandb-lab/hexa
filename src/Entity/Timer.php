@@ -51,8 +51,13 @@ class Timer
         return $this->startedAt;
     }
 
-    public function setStartedAt(\DateTime $startedAt): void
+    public function getEndedAt(): ?\DateTime
     {
-        $this->startedAt = $startedAt;
+        return $this->endedAt;
+    }
+
+    public function setEndedAt(?\DateTime $endedAt): void
+    {
+        $this->endedAt = $endedAt;
     }
 }

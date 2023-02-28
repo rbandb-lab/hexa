@@ -8,7 +8,6 @@ use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Link;
 use Doctrine\ORM\Mapping as ORM;
 
-
 #[ORM\Entity]
 #[ApiResource]
 class Task
@@ -44,7 +43,7 @@ class Task
         return $this->id;
     }
 
-    public function setId(int $id): void
+    public function setId(?int $id): void
     {
         $this->id = $id;
     }
