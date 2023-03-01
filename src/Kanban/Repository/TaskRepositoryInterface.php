@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Domain\Repository;
 
-use App\Entity\Task;
+use Infrastructure\ORM\Entity\Task;
 
 interface TaskRepositoryInterface
 {

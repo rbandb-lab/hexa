@@ -20,7 +20,7 @@ class StatusTest extends ApiTestCase
         $response = static::createClient()->request('GET', '/api/statuses/1');
         $this->assertResponseIsSuccessful();
         $this->assertJsonContains([
-            '@type' => 'Status',
+            '@type' => 'Status.php',
             '@id' => '/api/statuses/1',
             'name' => 'todo',
         ]);
@@ -32,7 +32,7 @@ class StatusTest extends ApiTestCase
         $response = static::createClient()->request('GET', '/api/statuses/2');
         $this->assertResponseIsSuccessful();
         $this->assertJsonContains([
-            '@type' => 'Status',
+            '@type' => 'Status.php',
             '@id' => '/api/statuses/2',
             'name' => 'in_progress',
         ]);
@@ -44,7 +44,7 @@ class StatusTest extends ApiTestCase
         $response = static::createClient()->request('GET', '/api/statuses/3');
         $this->assertResponseIsSuccessful();
         $this->assertJsonContains([
-            '@type' => 'Status',
+            '@type' => 'Status.php',
             '@id' => '/api/statuses/3',
             'name' => 'done',
         ]);
@@ -56,7 +56,7 @@ class StatusTest extends ApiTestCase
         $response = static::createClient()->request('GET', '/api/statuses');
         $this->assertResponseIsSuccessful();
         $this->assertJsonContains([
-            '@context' => '/api/contexts/Status',
+            '@context' => '/api/contexts/Status.php',
             '@type' => 'hydra:Collection',
             '@id' => '/api/statuses',
         ]);

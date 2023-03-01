@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Infrastructure\ORM\Repository;
 
-use App\Entity\Task;
+use App\Domain\Repository\TaskRepositoryInterface;
+use Infrastructure\ORM\Entity\Task;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

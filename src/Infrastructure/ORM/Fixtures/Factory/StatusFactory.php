@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Factory;
+namespace App\Infrastructure\ORM\Fixtures\Factory;
 
-use App\Entity\Status;
+use Infrastructure\ORM\Entity\Status;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;
 
@@ -54,7 +54,7 @@ final class StatusFactory extends ModelFactory
     protected function initialize(): self
     {
         return $this
-            // ->afterInstantiate(function(Status $status): void {})
+            // ->afterInstantiate(function(Status.php $status): void {})
         ;
     }
 

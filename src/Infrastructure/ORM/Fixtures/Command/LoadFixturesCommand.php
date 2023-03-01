@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\UI\Command;
+namespace App\Infrastructure\ORM\Fixtures\Command;
 
-use App\Factory\StatusFactory;
-use App\Factory\TaskFactory;
-use App\Repository\StatusRepositoryInterface;
+use App\Domain\Repository\StatusRepositoryInterface;
+use App\Infrastructure\ORM\Fixtures\Factory\StatusFactory;
+use App\Infrastructure\ORM\Fixtures\Factory\TaskFactory;
 use Faker\Factory;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;

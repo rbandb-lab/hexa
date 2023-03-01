@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Factory;
+namespace App\Infrastructure\ORM\Fixtures\Factory;
 
-use App\Entity\Task;
-use App\Entity\Timer;
+use Infrastructure\ORM\Entity\Task;
+use Infrastructure\ORM\Entity\Timer;
 use Faker\Factory;
 use Zenstruck\Foundry\ModelFactory;
 use Zenstruck\Foundry\Proxy;

@@ -2,9 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Infrastructure\ORM\Repository;
 
-use App\Entity\Status;
+use App\Domain\Repository\StatusRepositoryInterface;
+use Infrastructure\ORM\Entity\Status;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 

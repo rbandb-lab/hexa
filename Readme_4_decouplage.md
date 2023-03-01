@@ -23,8 +23,11 @@ car plus aligné sur les actions
 
 Attention, l'état de l'application n'est pas équivalent à l'état de la base de données.
 
-En base de données on enregistre des tables, liées à des entities.
-Dans le domaine on manipule des 'models'
+En base de données on enregistre des tables, liées à des entities. Une entité est une représentation objet
+qui représente une structure de données à persister dans un storage.
+
+Dans le domaine on manipule des 'models'. Un model est une représentation abstraite qui permet 
+de résoudre un problème.
 
 Les points d'API peuvent notamment exposer des "verbs" qui reflètent des actions métier
 et pas simplement la création d'entities.
@@ -42,6 +45,9 @@ sont représentés par leur interface. Il peut y avoir plusieurs "Domain". Dans 
 avoir "Booking", "Payment", etc.
 2. Un dossier "Infrastructure". Il contient le tooling, les implémentations des services appelés dans le domaine.
 3. Un dossier "Shared". Outils communs.
+
+4. "Application" est un dossier facultatif, qui permet de séparer pour plus de clarté une sous-partie du domaine.
+Dans notre cas, les Command et les Queries
 
 B) Les tests. 
 - L'intérêt premier d'un domaine isolé et protégé est de n'y trouver que du métier. Cela permet

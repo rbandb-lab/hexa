@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Repository;
+namespace App\Domain\Repository;
 
-use App\Entity\Status;
+use Infrastructure\ORM\Entity\Status;
 
 interface StatusRepositoryInterface
 {

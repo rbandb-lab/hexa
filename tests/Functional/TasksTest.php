@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\Tests\Functional;
 
 use ApiPlatform\Symfony\Bundle\Test\ApiTestCase;
-use App\Entity\Task;
+use Infrastructure\ORM\Entity\Task;
 
 class TasksTest extends ApiTestCase
 {
